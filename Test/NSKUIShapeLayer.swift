@@ -187,7 +187,7 @@ import UIKit
     @IBInspectable public var borderColorOff: UIColor = UIColor.darkGray
     //decides the border color of the button when OFF
     
-    @IBInspectable public var fillingColor: UIColor = UIColor(red: 255/255, green: 0, blue: 0, alpha: 0.65)
+    @IBInspectable public var fillingColor: UIColor = UIColor(red: 255/255, green: 0, blue: 0, alpha: 0.35)
     //decides the color to be filled on selection
     
     @IBInspectable public var centerColor: UIColor = UIColor(red: 255/255, green: 0, blue: 0, alpha: 1)
