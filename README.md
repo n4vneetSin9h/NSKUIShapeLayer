@@ -6,7 +6,7 @@ Drop the ‘NSKUIShapeLayer.swift’ file in your Xcode Project Navigator.
 
 ## Usage
 
-Find the implementation video here.[NSKUIShapeLayers](https://drive.google.com/file/d/1jT5zC4CRxaXZ3xXdZP110GGZ0SuVoNMd/view?usp=sharing).
+Find the implementation video here.[Video](https://drive.google.com/file/d/1jT5zC4CRxaXZ3xXdZP110GGZ0SuVoNMd/view?usp=sharing).
 
 ### SquareCheckBox
 Just drop an UIButton in the storyboard and make it an instance of “SquareCheckBox” class.
