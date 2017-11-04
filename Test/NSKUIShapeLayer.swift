@@ -162,7 +162,7 @@ import UIKit
     }
     //MARK: - Custom Functions
     //function called for changing values
-    @objc func buttonTapped(){
+    @objc fileprivate func buttonTapped(){
         self.isOn = !self.isOn
     }
 }
@@ -247,7 +247,7 @@ import UIKit
     
     //MARK: - Custom Functions
     //function called for changing values
-    @objc func isTapped(){
+    @objc fileprivate func isTapped(){
         isOn = !isOn
     }
     
@@ -436,7 +436,7 @@ import UIKit
     
     //MARK: - Custom Functions
     //function called for changing values
-    @objc func isTapped(){
+    @objc fileprivate func isTapped(){
         self.isOn = !self.isOn
         //self.layer.sublayers?.removeAll()
         removableLayer.removeFromSuperlayer()
@@ -591,7 +591,7 @@ import UIKit
     
     //MARK: - Custom Functions
     //this function redraws the segment after someinteraction has been made with it by user
-    @objc func segmentTapped(sender: UIButton!){
+    @objc fileprivate func segmentTapped(sender: UIButton!){
         
         dragableViewX = sender.frame.minX
         for subViews in self.subviews as [UIView] {
@@ -604,18 +604,18 @@ import UIKit
     }
     
     //this function reassign the values of location variables
-    @objc func setPresentLocation(){
+    @objc fileprivate func setPresentLocation(){
         presentLocationX = dragableViewX
     }
     
     //this function create the pangesture variable to handle the dragging of segment selection view
-    func createPanGestureRecognizer(targetView: UIView){
+    fileprivate func createPanGestureRecognizer(targetView: UIView){
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handle(panGesture:)))
         targetView.addGestureRecognizer(panGesture)
     }
     
     //this handles the actions of pan gesture of the view
-    @objc func handle(panGesture: UIPanGestureRecognizer) {
+    @objc fileprivate func handle(panGesture: UIPanGestureRecognizer) {
         let translation = panGesture.translation(in: self)
         panGesture.setTranslation(CGPoint.zero, in: self)
         
