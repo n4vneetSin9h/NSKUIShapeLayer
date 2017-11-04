@@ -48,7 +48,6 @@ It needs to be observed using KVO.
 i.e. we need to use following code
 ```
 //create an outlet of this view
-
 	@IBOutlet weak var seg : SegmentedControlView!
 
 //add an observer for the ‘selectedSegment’ property
@@ -60,7 +59,8 @@ i.e. we need to use following code
             //DO SOMETHING...
         }
     }
-	deinit {
+    
+    deinit {
 		self.seg.removeObserver(self, forKeyPath: “selectedSegment”)
 	}
   ```
