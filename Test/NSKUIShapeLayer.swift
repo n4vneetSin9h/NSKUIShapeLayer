@@ -509,7 +509,7 @@ import UIKit
     }
     
     override func awakeFromNib() {
-        //originally each segment is one string stored in one variable i.e. segments, added in interface builder and it is divided into segments by puttind '_' in-between following examples will explain
+        //originally each segment is one string stored in one variable i.e. segments, added in interface builder and it is divided into segments by putting '_' in-between following examples will explain
         /*
          if the string is "USCANADAUK"
          this will create one segment with text "USCANADAUK"
