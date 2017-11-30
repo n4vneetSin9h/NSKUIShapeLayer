@@ -2,8 +2,8 @@
 //  SquareChecBox.swift
 //  Test
 //
-//  Created by Navneet Singh Kandara on 9/4/17.
-//  Copyright © 2017 Cogniter. All rights reserved.
+//  Created by Navneet Singh on 9/4/17.
+//  Copyright © 2017 NASKSOFT. All rights reserved.
 //
 
 import UIKit
