@@ -6,6 +6,8 @@ Drop the ‘NSKUIShapeLayer.swift’ file in your Xcode Project Navigator.
 
 ## Usage
 
+Find the implementation video here.[Video](https://drive.google.com/file/d/1jT5zC4CRxaXZ3xXdZP110GGZ0SuVoNMd/view?usp=sharing).
+
 ### SquareCheckBox
 Just drop an UIButton in the storyboard and make it an instance of “SquareCheckBox” class.
 All of the necessary properties of this class are available in the Utility Area in Attributes Inspector.
@@ -46,7 +48,6 @@ It needs to be observed using KVO.
 i.e. we need to use following code
 ```
 //create an outlet of this view
-
 	@IBOutlet weak var seg : SegmentedControlView!
 
 //add an observer for the ‘selectedSegment’ property
@@ -58,7 +59,8 @@ i.e. we need to use following code
             //DO SOMETHING...
         }
     }
-	deinit {
+    
+    deinit {
 		self.seg.removeObserver(self, forKeyPath: “selectedSegment”)
 	}
   ```
