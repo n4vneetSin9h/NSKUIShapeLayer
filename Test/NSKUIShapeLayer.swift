@@ -71,7 +71,6 @@ import UIKit
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        super.awakeFromNib()
         self.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         //setting target for button for animation on tap
         
