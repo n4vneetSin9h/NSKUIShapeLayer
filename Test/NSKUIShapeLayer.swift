@@ -2,8 +2,8 @@
 //  SquareChecBox.swift
 //  Test
 //
-//  Created by Navneet Singh Kandara on 9/4/17.
-//  Copyright © 2017 Cogniter. All rights reserved.
+//  Created by Navneet Singh on 9/4/17.
+//  Copyright © 2017 NASKSOFT. All rights reserved.
 //
 
 import UIKit
@@ -69,7 +69,8 @@ import UIKit
     // The storyboard loader uses this at runtime.
     
     
-    override func awakeFromNib() {
+    override func layoutSubviews() {
+        super.layoutSubviews()
         super.awakeFromNib()
         self.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         //setting target for button for animation on tap
@@ -204,7 +205,8 @@ import UIKit
         super.init(coder: aDecoder)
     }
     
-    override func awakeFromNib() {
+    override func layoutSubviews() {
+        super.layoutSubviews()
         self.setTitle(nil, for: .normal)
         //removing any title as it doesn't allow the layers in button to form and crashes the App
         
@@ -306,7 +308,8 @@ import UIKit
         super.init(coder: aDecoder)
     }
     
-    override func awakeFromNib() {
+    override func layoutSubviews() {
+        super.layoutSubviews()
         self.setTitle(nil, for: .normal)
         //removing any title as it doesn't allow the layers in button to form and crashes the App
         self.addTarget(self, action: #selector(isTapped), for: .touchUpInside)
@@ -508,7 +511,8 @@ import UIKit
         super.init(coder: aDecoder)
     }
     
-    override func awakeFromNib() {
+    override func layoutSubviews() {
+        super.layoutSubviews()
         //originally each segment is one string stored in one variable i.e. segments, added in interface builder and it is divided into segments by putting '_' in-between following examples will explain
         /*
          if the string is "USCANADAUK"
@@ -748,8 +752,8 @@ import UIKit
         super.init(coder: aDecoder)
     }
     
-    override func awakeFromNib() {
-        
+    override func layoutSubviews() {
+        super.layoutSubviews()
         allPoints.append(CGPoint(x: 0.0, y: self.bounds.height - self.frame.height/2))
         for points in 0..<((noOfCheckPoints * 2) - 1){
             let val = (self.bounds.width/CGFloat((noOfCheckPoints * 2) - 1)) * CGFloat(points+1)
