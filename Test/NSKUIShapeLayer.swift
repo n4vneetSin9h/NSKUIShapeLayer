@@ -476,6 +476,9 @@ import UIKit
     //decides the corner radius of the segment
     @IBInspectable public var segmentCornerRadius: CGFloat = 5.0
     
+    //delegate for SegementedControlView
+    weak var delegate: SegmentedViewControlDelegate!
+    
     //this is the view's location on horizontal axis where it will move to with animation
     fileprivate var dragableViewX: CGFloat = 1
     
@@ -497,8 +500,18 @@ import UIKit
     //stores each segment as UIButton. It's public to allow the programmer make desirable changes to it.
     var segmentButtons = [UIButton]()
     
+    //this variable tells about the previous value of the selectedSegment
+    private var previousSegment: Int? = nil
+    
     //this is the actual variable desiding which element is selected
-    @objc dynamic var selectedSegment: Int = 0
+    @objc dynamic var selectedSegment: Int = 0 {
+        willSet {
+            previousSegment = selectedSegment
+        }
+        didSet {
+            delegate.func segmentedControlView(_ segmentedControlView: SegmentedControlView, selectedSegment: selectedSegment, previousSegment: previousSegment!)
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -670,6 +683,11 @@ import UIKit
         }
         
     }
+}
+
+protocol SegmentedControlViewDelegate: class {
+    /// gives the previous value and latest value of the selected segment
+    func segmentedControlView(_ segmentedControlView: SegmentedControlView, selectedSegment: Int, previousSegment: Int)
 }
 
 //....................................................
