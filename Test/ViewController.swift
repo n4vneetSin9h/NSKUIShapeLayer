@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, SegmentedControlViewDelegate {
 
     
     @IBOutlet weak var switchCheckButton: SwitchCheckBtn!
@@ -29,13 +29,11 @@ class ViewController: UIViewController {
         backProgressBtn.layer.borderWidth = 1.0
         backProgressBtn.layer.borderColor = UIColor.blue.cgColor
         // Do any additional setup after loading the view, typically from a nib.
-        
+        seg.delegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
         myLabel.text = seg.segmentTextArray[0]
-        self.seg.addObserver(self, forKeyPath: "selectedSegment", options: .new, context: nil)
         backGroundImage.image = UIImage(named: "\(seg.segmentTextArray[seg.selectedSegment]).jpg")
     }
    
@@ -44,21 +42,9 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        if keyPath == "selectedSegment"{
-            //DO SOMETHING...
-            myLabel.text = seg.segmentTextArray[seg.selectedSegment]
-            backGroundImage.image = UIImage(named: "\(seg.segmentTextArray[seg.selectedSegment]).jpg")
-        }
-    }
-    
-    @IBAction func boolTickButton(_ sender: SquareCheckBox) {
-        print(sender.isOn)
-        
-    }
-    
-    @IBAction func mySwitch(_ sender: SwitchCheckBtn) {
-        print(sender.isOn)
+    func segmentedControlView(_ segmentedControlView: SegmentControlView, selectedSegment: Int, previousSegment: Int) {
+        myLabel.text = seg.segmentTextArray[seg.selectedSegment]
+        backGroundImage.image = UIImage(named: "\(seg.segmentTextArray[seg.selectedSegment]).jpg")
     }
     
     @IBAction func nextCheckPoint(_ sender: Any) {
